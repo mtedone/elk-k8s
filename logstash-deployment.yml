@@ -1,0 +1,25 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  name: logstash
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        name: logstash
+    spec:
+      containers:
+      - env:
+        - name: LS_JAVA_OPTS
+          value: -Xmx512m -Xms512m
+        image: alzamabar/logstash:6.6.0
+        name: logstash
+        ports:
+        - containerPort: 5000
+        resources: {}
+status: {}
