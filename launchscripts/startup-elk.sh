@@ -1,8 +1,10 @@
 #!/bin/bash
 
-kubectl apply -f ../elasticsearch-deployment.yml 
-kubectl apply -f ../elasticsearch-service.yml
-kubectl apply -f ../kibana-deployment.yml
-kubectl apply -f ../kibana-service.yml
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+
+kubectl apply -f ${DIR}/../elasticsearch-deployment.yml 
+kubectl apply -f ${DIR}/../elasticsearch-service.yml
+kubectl apply -f ${DIR}/../kibana-deployment.yml
+kubectl apply -f ${DIR}/../kibana-service.yml
 
 exit 0

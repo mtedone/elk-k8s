@@ -10,7 +10,7 @@ spec:
   - name: "5601"
     port: 5601
     targetPort: 5601
-    nodePort: 30000
+    nodePort: 32000
   selector:
     name: kibana
   type: NodePort
